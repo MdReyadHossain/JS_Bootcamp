@@ -1,0 +1,13 @@
+DOM events
+1. Event Object
+	event type: change, Submit, load, unload, open, play
+	canplay, pause, playing, progress, ended, resize,
+	scroll, toggle etc.
+
+	properties: type, target, preventDefault()
+
+2. MouseEvent Object
+3. Keyboard Event Object
+4. FocusEvent Object
+5. Clipboard Event Object
+6. DragEvent Object

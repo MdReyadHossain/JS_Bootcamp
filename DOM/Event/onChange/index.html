@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnChange</title>
+</head>
+<body>
+    <div style="padding: 10px 10%;">
+        <label for="nametxt">Name</label>
+        <input type="text" id="nametxt" name="name"> 
+        <span id="Welcome"></span> <br>
+        <br> <br>
+        <label><b>Progress</b></label> <br>
+        <div class="skills">
+            <input type="checkbox" id="html" value="HTML5" name="web"> <label for="html">HTML5</label> <br>
+            <input type="checkbox" id="css" value="CSS3" name="web"> <label for="css">CSS3</label> <br>
+            <input type="checkbox" id="bootstrap" value="Bootstrap" name="web"> <label for="bootstrap">Bootstrap</label> <br>
+            <input type="checkbox" id="js" value="Java Script" name="web"> <label for="js">Java Script</label> <br>
+            <input type="checkbox" id="react" value="React JS" name="web"> <label for="react">React JS</label> <br>
+            <input type="checkbox" id="php" value="PHP" name="web"> <label for="php">PHP</label> <br>
+        </div> 
+        <br>
+        <span id="show"></span> <br>
+        <br>
+        <label for="sector"><b>Prefered Sector</b></label>
+        <div class="department">
+            <Select name="sector" id="sector">
+                <option value="">None</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Machine Learning">Machine Learning</option>
+                <option value="Data Science">Data Science</option>
+            </Select>
+        </div>
+        <br>
+        <span id="show-sector"></span>
+        <br> <br>
+    </div>
+    
+
+    <script src="index.js"></script>
+</body>
+</html>

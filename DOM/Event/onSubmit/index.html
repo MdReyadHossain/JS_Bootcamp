@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        label {
+            margin-bottom: 1rem;
+        }
+        input {
+            margin-bottom: 1rem;
+        }
+        span {
+            color: red;
+        }
+    </style>
+    <title>onSubmit</title>
+</head>
+<body>
+    <form action="" onsubmit="form(); return false" novalidate>
+        <div class="information">
+            <label for="firstName">First Name: </label>
+            <input type="text" id="firstName" name="firstName"> <span id="fnameErr"></span>
+            <br>
+            <label for="lastName">Last Name: </label>
+            <input type="text" id="lastName" name="lastName"> <span id="lnameErr"></span>
+            <br>
+            <label for="email">Email: </label>
+            <input type="email" id="email" name="email"> <span id="emailErr"></span>
+            <br>
+            <label for="password">Password: </label>
+            <input type="password" id="password" name="password"> <span id="passErr"></span>
+        </div>
+        <input type="submit" value="Submit" id="submit">
+    </form>
+    
+    
+
+
+    <script src="index.js"></script>
+</body>
+</html>

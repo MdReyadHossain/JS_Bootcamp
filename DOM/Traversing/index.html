@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="animal-container">
+        <ul id="animal-list">
+            <li id="cat">Cat</li>
+            <li id="dog">Dog</li>
+            <li id="horse">Horse</li>
+        </ul>
+    </div>
+
+    <script>
+        let animal = document.getElementById("animal-list");
+        let animalChild = animal.querySelector("#dog"); // select within child
+        animal.children[1]; // select within child by index
+        animal.parentElement; // select root element of this child
+
+        // **note: for sibling element, animalchild should be select as querySelector
+        animalChild.nextElementSibling; // select next of the selected child
+        animalChild.previousElementSibling; // previous child
+    </script>
+</body>
+</html>

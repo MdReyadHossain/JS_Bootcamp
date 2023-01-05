@@ -18,22 +18,30 @@
         input {
             margin-bottom: 1rem;
         }
+
+        .qrcode {
+            font-weight: bold;
+            width: 150px;
+            height: 50px;
+        }
     </style>
 </head>
 <body>
     <div class="info-container">
-        <form action="qr.html">
+        <form action="">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name">
             <br>
             <label for="email">Email:</label>
             <input type="email" id="email" name="email">
             <br>
-            <button type="button" onclick="qrgenarator();">Done</button>
+            <button type="button" onclick="qrgenarator();">Generate QR</button>
         </form>
+        <br>
+        <div class="qrcode"></div>
     </div>
-    <br>
-    <div class="qrcode"></div>
+
+
 
     <script src="index.js"></script>
 </body>

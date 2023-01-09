@@ -2,7 +2,7 @@
 
 drag event object:
 ------------------
-1. dragstart
+1. dragstart 
 2. drag 
 3. dragend
 4. dragenter
@@ -12,12 +12,18 @@ drag event object:
 
 */
 
+function dragstart(event) {
+    console.log("drag start!");
+    event.dataTransfer.setData("txt", event.target.className);
+    console.log(event.target.className);
+};
+
 let box = document.querySelector(".box");
 let drag = document.getElementById("dragText");
 
-drag.addEventListener("dragstart", function(event) {
-    event.dataTransfer.setData("txt", drag.id);
-}); 
+// drag.ondragstart = dragstart;
+
+drag.addEventListener("dragstart", dragstart);
 
 box.addEventListener("dragover", function(event) {
     event.preventDefault();
@@ -25,6 +31,6 @@ box.addEventListener("dragover", function(event) {
 
 box.addEventListener("drop", function(event) {
     let obj = event.dataTransfer.getData("txt");
-    box.appendChild(document.getElementById(obj));
-    // event.preventDefault();
+    box.appendChild(document.querySelector("." + obj));
+    event.preventDefault();
 });

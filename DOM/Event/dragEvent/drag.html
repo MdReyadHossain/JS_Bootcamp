@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag Event</title>
+    <style>
+        .drop-target {
+            height: 3.5em;
+            width: 7em;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="drop-target">
+        <p id="obj" draggable="true">Drag me!</p>
+    </div>
+
+    <p id="ins"><br></p>
+
+    <div class="drop-target"></div>
+
+
+    <script>
+        // for drraggable object
+        document.addEventListener("dragstart", function(e) {
+            e.dataTransfer.setData("txt", e.target.id);
+            e.target.style.opacity = "0.5";
+        });
+
+        document.addEventListener("drag", function(e) {
+            document.getElementById("ins").innerHTML = "Drag started!";
+        });
+
+        document.addEventListener("dragend", function(e) {
+            e.target.style.opacity = "1";
+            document.getElementById("ins").innerHTML = "Drag finished!";
+        });
+
+        // for drop target
+        document.addEventListener("dragenter", function(e) {
+            if(e.target.className == "drop-target") {
+                e.target.style.border = "3px dotted red";
+            }
+        });
+
+        document.addEventListener("dragover", function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener("dragleave", function(e) {
+            if(e.target.className == "drop-target") {
+                e.target.style.border = "";
+            }
+        });
+
+        document.addEventListener("drop", function(e) {
+            e.preventDefault();
+            if(e.target.className == "drop-target") {
+                let data = e.dataTransfer.getData("txt");
+                e.target.appendChild(document.getElementById(data));
+                e.target.style.border = "";
+            }
+        });
+    </script>
+</body>
+</html>

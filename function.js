@@ -59,3 +59,19 @@ const studentInfo = {
 }
 studentInfo.name; // Reyad
 studentInfo.dept(); // call the object of the propety as function
+
+// default parameter
+const messege = (txt = "Parameter empty!") => {
+    console.log(`${txt}`);
+}
+
+messege("Hello World!");
+
+
+// rest parameter : have to add at the end
+const numbers = (num1, num2, ...par) => { 
+    console.log(num1, num2); // 1 21
+    console.log(par); // [22, 23, 420]
+}
+
+numbers(1, 21, 22, 23, 420);

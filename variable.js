@@ -6,6 +6,7 @@ console.log(`x = ${x}`); // ReferenceError
 
 y = 20;
 console.log(`y = ${y}`);
+
 var y; // hoisting 
 
 const variable1 = 10; // 'const' will not be changed

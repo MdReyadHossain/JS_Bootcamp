@@ -74,3 +74,22 @@ var3 = var1 * var2; // 6 * 3 = 18
 var3 = var1 / var2; // 6 / 3 = 2
 var3 = var1 % var2; // 6 / 3 (remainder of division) = 0
 var3 = var1 ** var2; // 6^3 = 216
+
+// spread operator
+let numbers = [5, 6 ,7];
+let newNumbers = [1, 2, ...numbers]; // spread operator can add anywhere
+
+console.log(newNumbers);
+
+let personalObj = {
+    name: "Reyad",
+    age: 25
+}
+
+let professionObj = {
+    occupation: "Student",
+    Institution: "AIUB"
+}
+
+let newObj = {...personalObj, ...professionObj};
+console.log(newObj);

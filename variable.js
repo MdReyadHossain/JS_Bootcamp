@@ -6,7 +6,6 @@ console.log(`x = ${x}`); // ReferenceError
 
 y = 20;
 console.log(`y = ${y}`);
-
 var y; // hoisting 
 
 const variable1 = 10; // 'const' will not be changed
@@ -26,3 +25,8 @@ const FIRST_NAME = "javascript"; // Constant case type
 /*boolian type*/
 const boolian1 = false;
 const boolian2 = true;
+
+//swap variable
+let a = 20, b = 30;
+[a, b] = [b, a];
+console.log("a = " + a + ", b = " + b); // a = 30, b = 20

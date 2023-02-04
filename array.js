@@ -62,3 +62,10 @@ for(let i = 0; i < 4; i++) { // for row
         console.log(arr2d[i][j]); // traverse 2D array
     }
 }
+
+
+// destructuring
+const numbers = [2, 4, 6, 1, 9];
+let [num1, num2, num3, ...nums] = numbers;
+
+console.log(nums);

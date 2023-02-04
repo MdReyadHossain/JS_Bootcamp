@@ -80,3 +80,33 @@ date.getFullYear(); // only year
 date.getMonth(); // index number of month (e.g. Jan = 0, Feb = 1, Mar = 2, ..., Dec = 11)
 date.getDay(); // index number of day(e.g. Sat = 0, Sun = 1, ..., Fry = 6)
 date.getHours(); // current hour(s) 
+
+
+// object literals
+function personInfo(name, age) {
+    return {
+        name, // name : name,
+        age   // age : age
+    }
+}
+
+console.log(personInfo("Reyad Hossain", 22));
+
+/* normal way...
+let messege = {
+    body : function() {
+        return "Hello World!";
+    }
+}
+
+console.log(messege.body());
+*/
+
+// ES6
+let messege = {
+    text() {
+        return "Hello World!";
+    }
+}
+
+console.log(messege.text());

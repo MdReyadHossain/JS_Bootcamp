@@ -32,6 +32,10 @@ const func4 = () => {
 }
 func4();
 
+const ReturnFunc = () => "Hello, Its return type"; // return type function
+
+console.log(ReturnFunc());
+
 
 /* return type */
 function func5() {
@@ -75,3 +79,45 @@ const numbers = (num1, num2, ...par) => {
 }
 
 numbers(1, 21, 22, 23, 420);
+
+
+// forEach
+num = [40, 30, 20, 10];
+num.forEach(showArray)
+
+function showArray(element) {
+    console.log(element);
+}
+
+num.forEach((ele, index, arr)=>{
+    arr[index] = ele ** 2;
+})
+console.log(num);
+
+
+// filter : not applicable for existing array/obj
+const newNum = num.filter((ele)=> ele > 500);
+    
+console.log(newNum);
+
+
+// filter and map
+const vehicle = [
+    {
+        name: "BMW",
+        pw: 503
+    },
+    {
+        name: "Lamborghini",
+        pw: 626
+    },
+    {
+        name: "Mazda",
+        pw: 452
+    },
+];
+
+
+const FilterVehicle = () => vehicle.filter((obj) => obj.pw > 500 ).map((obj) => obj.name);
+
+console.log(FilterVehicle());

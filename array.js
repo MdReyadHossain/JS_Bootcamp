@@ -69,3 +69,13 @@ const numbers = [2, 4, 6, 1, 9];
 let [num1, num2, num3, ...nums] = numbers;
 
 console.log(nums);
+
+
+//find() and findIndex()
+let numbersArray = [2, 3, 6, 7, 9];
+function evenNumbers(value, index, array) {
+    if(value%2 === 0)
+        return value; 
+}
+let even = numbersArray.find(evenNumbers);
+console.log(even);

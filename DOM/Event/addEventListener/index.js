@@ -50,7 +50,7 @@ document.addEventListener("keypress", function(event) {
     }
 });
 
-document.addEventListener("keypress", function(event){
+document.addEventListener("keydown", function(event){
     document.getElementById("key").innerHTML = "Button Pressed: " + event.key;
 })
 

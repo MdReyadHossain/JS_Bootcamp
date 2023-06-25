@@ -92,7 +92,7 @@ function personInfo(name, age) {
 
 console.log(personInfo("Reyad Hossain", 22));
 
-/* normal way...
+// normal way...
 let messege = {
     body : function() {
         return "Hello World!";
@@ -100,13 +100,68 @@ let messege = {
 }
 
 console.log(messege.body());
-*/
+
 
 // ES6
-let messege = {
+let messeges = {
     text() {
         return "Hello World!";
     }
 }
 
-console.log(messege.text());
+console.log(messeges.text());
+
+
+// distructuring 
+let frontend = { // single object
+    tool: "MS VS code",
+    script_lang: "HTML",
+    programmin_lang: "JS",
+    library: {
+        JS: "React JS",
+        CSS: "Bootstrap"
+    }
+}
+const {tool, script_lang, programmin_lang, library} = frontend;
+console.log("\nFor Beginner frontend development: \n" + tool);
+console.log(script_lang);
+console.log(programmin_lang + "\nLibraries: ");
+console.log(library.JS);
+console.log(library.CSS);
+
+
+// array of object (distructuring) 
+let blocks = [
+    {
+        color: "Red",
+        size: "Big"
+    },
+    {
+        color: "Blue",
+        size: "Small"
+    },
+    {
+        color: "Gray",
+        size: "Medium"
+    }
+];
+
+for(let i = 0; i < blocks.length; i++) {
+    const {color, size} = blocks[i];
+    console.log(i+1 + ". Color = " + color + ", Size = " + size);
+}
+
+
+// distructuring function parameters with object
+const vehicle = {
+    car: "BMW",
+    bike: "Kawasaki",
+}
+
+const distructuringObj = ({car, bike}) => {
+    console.log(car);
+    console.log(bike);
+}
+
+distructuringObj(vehicle);
+

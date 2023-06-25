@@ -19,14 +19,14 @@ func3(2, "javascript"); // call func3 with two initialized parameters
 
 
 /* function variable */
-const functionVariable = function(x) {
+const functionVariable = function (x) {
     return (2 + x);
 }
 
 functionVariable(1 + " Nice"); // output = 21 Nice
 
 
-/* arrow function (ES6) */ 
+/* arrow function (ES6) */
 const func4 = () => {
     console.log("arrow function");
 }
@@ -42,7 +42,7 @@ function func5() {
     let num = 20;
     return num;
     num = 50;
-}   
+}
 const n = func5(); // n = 20; typeof n = number 
 
 function func6() {
@@ -73,7 +73,7 @@ messege("Hello World!");
 
 
 // rest parameter : have to add at the end
-const numbers = (num1, num2, ...par) => { 
+const numbers = (num1, num2, ...par) => {
     console.log(num1, num2); // 1 21
     console.log(par); // [22, 23, 420]
 }
@@ -89,15 +89,15 @@ function showArray(element) {
     console.log(element);
 }
 
-num.forEach((ele, index, arr)=>{
+num.forEach((ele, index, arr) => {
     arr[index] = ele ** 2;
 })
 console.log(num);
 
 
 // filter : not applicable for existing array/obj
-const newNum = num.filter((ele)=> ele > 500);
-    
+const newNum = num.filter((ele) => ele > 500);
+
 console.log(newNum);
 
 
@@ -118,6 +118,5 @@ const vehicle = [
 ];
 
 
-const FilterVehicle = () => vehicle.filter((obj) => obj.pw > 500 ).map((obj) => obj.name);
-
+const FilterVehicle = () => vehicle.filter((obj) => obj.pw > 500).map((obj) => obj.name);
 console.log(FilterVehicle());

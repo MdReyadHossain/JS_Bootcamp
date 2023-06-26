@@ -217,7 +217,7 @@ const taskOne = () => {
 const taskTwo = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve("Promise resolved for Task 2!");
+            resolve("Promise not resolved for Task 2!");
         }, 2000);
     })
 }
@@ -228,10 +228,25 @@ const taskThree = () => {
     })
 }
 
-taskOne()
-    .then((response) => { console.log(response) })
-    .then(taskTwo)
-    .then((response) => { console.log(response) })
-    .then(taskThree)
-    .then((response) => { console.log(response) })
-    .catch((response) => { console.log(response) });
+// taskOne()
+//     .then((response) => { console.log(response) })
+//     .then(taskTwo)
+//     .then((response) => { console.log(response) })
+//     .then(taskThree)
+//     .then((response) => { console.log(response) })
+//     .catch((response) => { console.log(response) });
+
+// asyn await
+const fetchTask = async () => {
+    try {
+        const task1 = await taskOne();
+        console.log(task1);
+        const task2 = taskTwo();
+        console.log(task2);
+        const task3 = await taskThree();
+        console.log(task3);
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+fetchTask();

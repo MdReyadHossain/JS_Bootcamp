@@ -95,7 +95,7 @@ num.forEach((ele, index, arr) => {
 console.log(num);
 
 
-// filter : not applicable for existing array/obj
+// filter : not effect on existing(num) array/obj
 const newNum = num.filter((ele) => ele > 500);
 
 console.log(newNum);
@@ -120,3 +120,118 @@ const vehicle = [
 
 const FilterVehicle = () => vehicle.filter((obj) => obj.pw > 500).map((obj) => obj.name);
 console.log(FilterVehicle());
+
+
+// startwith(), endwith() & includes()
+let message = "Hello World of Love";
+console.log(message.startsWith("World", 6)); // true
+console.log(message.endsWith("Love", 19)); // true
+console.log(message.includes("World", 2)); // true
+
+
+/* callback and higher order function */
+const square = (num) => {
+    console.log(num * num);
+}
+
+const higherOrderFunction = (num, callback) => {
+    callback(num);
+}
+higherOrderFunction(6, square);
+
+// example:
+const programOne = (callbackfunc) => {
+    console.log("Program 1");
+    callbackfunc();
+}
+
+const programTwo = (callbackfunc) => {
+    // setTimeout(() => {              // asynchronous function -> setTimeout()
+    console.log("Program 2");
+    callbackfunc();
+    // }, 2000);
+}
+
+const programThree = () => {
+    console.log("Program 3");
+}
+
+programOne(() => {
+    programTwo(() => {
+        programThree();
+    })
+});
+
+// Promise state: pending, resolve, reject
+// const promise = new Promise((resolve, reject) => {
+//     isPromiseDone = true;
+//     if (isPromiseDone)
+//         resolve("Promise resolved!");
+//     else
+//         reject("Promise broked!");
+// })
+
+// const anotherPromise = new Promise((resolve, reject) => {
+//     resolve("Resolved from another promise!");
+// })
+
+// promise
+//     .then((response) => {       // resolve 's argument will sent to .then parameter
+//         console.log(response);
+//     })
+//     .catch((response) => {      // reject 's argument will sent to .catch parameter
+//         console.log(response);
+//     });
+
+// Promise.all([promise, anotherPromise])
+//     .then(([response, anotherResponse]) => { // destructuring in .then
+//         console.log(response);
+//         console.log(anotherResponse);
+//     });
+
+// const promise1 = new Promise((resolve) => {
+//     setTimeout(() => {
+//         resolve("Promise 1 resolved!");
+//     }, 2000);
+// })
+
+// const promise2 = new Promise((resolve) => {
+//     setTimeout(() => {
+//         resolve("Promise 2 resolved!");
+//     }, 1000);
+// })
+
+// Promise.race([promise1, promise2])
+//     .then((response) => {
+//         console.log(response);
+//     });
+
+console.log("");
+// example:
+const taskOne = () => {
+    return new Promise((resolve, reject) => {
+        resolve("Promise resolved for Task 1!");
+    })
+}
+
+const taskTwo = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Promise resolved for Task 2!");
+        }, 2000);
+    })
+}
+
+const taskThree = () => {
+    return new Promise((resolve, reject) => {
+        resolve("Promise resolved for Task 3!");
+    })
+}
+
+taskOne()
+    .then((response) => { console.log(response) })
+    .then(taskTwo)
+    .then((response) => { console.log(response) })
+    .then(taskThree)
+    .then((response) => { console.log(response) })
+    .catch((response) => { console.log(response) });

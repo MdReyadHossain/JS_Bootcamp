@@ -1,7 +1,7 @@
 /* Object Intro */
-const object = { 
-    prop1 : 10, 
-    prop2 : 'hello world' 
+const object = {
+    prop1: 10,
+    prop2: 'hello world'
 };
 
 object.prop2; // output = hello world
@@ -11,16 +11,16 @@ object['prop1']; // another way to get the property from the object
 
 /* Nested Object */
 const nestedObject = {
-    prop1 : 
+    prop1:
         10,
-    prop2 : {
-        prop3 : {
-            prop4 :{
-                value : 30
+    prop2: {
+        prop3: {
+            prop4: {
+                value: 30
             }
         }
-    } ,
-    value : 40
+    },
+    value: 40
 }
 
 nestedObject.prop2.prop3.prop4.value; // output = 30
@@ -48,7 +48,7 @@ const studentInfo = [
     }
 ]
 
-for(let i = 0; i < studentInfo.length; i++) { // output : all the objects from the array
+for (let i = 0; i < studentInfo.length; i++) { // output : all the objects from the array
     console.log("Name : " + studentInfo[i].name);
     console.log("ID : " + studentInfo[i].id);
     console.log("Dept. : " + studentInfo[i].dept + "\n");
@@ -94,7 +94,7 @@ console.log(personInfo("Reyad Hossain", 22));
 
 // normal way...
 let messege = {
-    body : function() {
+    body: function () {
         return "Hello World!";
     }
 }
@@ -122,7 +122,7 @@ let frontend = { // single object
         CSS: "Bootstrap"
     }
 }
-const {tool, script_lang, programmin_lang, library} = frontend;
+const { tool, script_lang, programmin_lang, library } = frontend;
 console.log("\nFor Beginner frontend development: \n" + tool);
 console.log(script_lang);
 console.log(programmin_lang + "\nLibraries: ");
@@ -146,9 +146,9 @@ let blocks = [
     }
 ];
 
-for(let i = 0; i < blocks.length; i++) {
-    const {color, size} = blocks[i];
-    console.log(i+1 + ". Color = " + color + ", Size = " + size);
+for (let i = 0; i < blocks.length; i++) {
+    const { color, size } = blocks[i];
+    console.log(i + 1 + ". Color = " + color + ", Size = " + size);
 }
 
 
@@ -158,7 +158,7 @@ const vehicle = {
     bike: "Kawasaki",
 }
 
-const distructuringObj = ({car, bike}) => {
+const distructuringObj = ({ car, bike }) => {
     console.log(car);
     console.log(bike);
 }

@@ -26,3 +26,11 @@ API:
         -> fetch() - global method for making HTTP Request
         -> 2 ways to call - then, async await
         -> fetch() returns a promise and returned promise can only handle network error
+
+    - Axios:
+        -> axios is a js library
+        -> very easy to use
+        -> supports all modern browser includig IE
+        -> returns promise
+        -> can throw errors
+        ->  

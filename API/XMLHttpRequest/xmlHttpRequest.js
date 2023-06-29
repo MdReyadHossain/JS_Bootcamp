@@ -19,7 +19,7 @@ const makeRequest = (method, url, reqData = null) => {
         console.log("Caught an error!");
     }
 
-    xhr.send(JSON.stringify(reqData));
+    xhr.send(JSON.stringify(reqData)); // keep empty parameter for delete
 }
 
 const getAllInfo = () => {

@@ -8,6 +8,7 @@ function changeInput(event) {
 }
 
 let nameInput = document.getElementById("nametxt");
+
 //                        event_type   function
 nameInput.addEventListener("change", changeInput);
 

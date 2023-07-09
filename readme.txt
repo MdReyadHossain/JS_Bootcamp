@@ -33,4 +33,10 @@ API:
         -> supports all modern browser includig IE
         -> returns promise
         -> can throw errors
-        ->  
+    
+    - JQuery:
+        -> ajax - Asynchronous Javascript And Xml
+
+Web Storage:
+-> Allows to store and read data in browser
+-> localStorage, sessionStorage, cookie

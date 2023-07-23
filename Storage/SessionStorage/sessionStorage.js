@@ -1,1 +1,0 @@
-sessionStorage.setItem("name", "Reyad")

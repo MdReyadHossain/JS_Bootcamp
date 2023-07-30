@@ -1,4 +1,4 @@
-// head -> 100 | o -> 200 | o -> 300 | o -> Null
+// head -> 100 -> 200 -> 300 -> Null
 
 class Node {
     constructor(data, next = null) {
@@ -146,6 +146,62 @@ class LinkedList {
         }
     }
 
+    getList() {
+        return this.head;
+    }
+
+    // swap two nodes (index1 < index2)
+    changeNode(index1, index2) {
+        if (!this.head) {
+            console.log(`list is empty`);
+        }
+        else {
+            let currentX = this.head, currentY = this.head, cnt = 1, prevX = null, prevY = null, nextY;
+            while (currentX.next && cnt < index1) {
+                prevX = currentX;
+                currentX = currentX.next;
+                cnt++;
+            }
+            cnt = 1;
+            while (currentY.next && cnt < index2) {
+                prevY = currentY;
+                currentY = currentY.next;
+                cnt++;
+            }
+            nextY = currentY.next;
+
+            if (index1 == index2 - 1)
+                currentY.next = currentX;
+            else {
+                currentY.next = currentX.next;
+                prevY.next = currentX;
+            }
+
+            currentX.next = nextY;
+
+            if (index1 == 1)
+                this.head = currentY;
+            else
+                prevX.next = currentY;
+        }
+    }
+
+    // reverse a list
+    reverse() {
+        let previous = null, current = this.head;
+        let nextCurr = current.next;
+        while (current.next) {
+            current.next = previous;
+            previous = current;
+            current = nextCurr;
+            nextCurr = current.next;
+        }
+        current.next = previous;
+        previous = current;
+        this.head = previous;
+    }
+
+
     // display the list
     printList() {
         let current = this.head;
@@ -172,13 +228,19 @@ list.insertfirst(400);
 list.insertAt(500, 2);
 list.insertAt(600, 1);
 
-list.updateDataAt(900, 2);
+// list.updateDataAt(900, 2);
 
-list.deletelast();
-list.deleteAt(6);
+// list.deletelast();
+// list.deleteAt(6);
 
 list.printList();
-list.getSingleData(2);
+// list.changeNode(1, 2);
+list.reverse();
 
-console.log(list);
+// list.getSingleData(2);
+
+// console.log(list);
 // console.log(list.head);
+
+// changeNode(list.getList(), 1, 6);
+list.printList();

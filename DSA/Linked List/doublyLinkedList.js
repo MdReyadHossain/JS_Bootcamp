@@ -147,21 +147,96 @@ class LinkedList {
         this.size--;
     }
 
+    // swap two nodes (index1 < index2)
+    /*
+    * index2 == this.size // last node                  
+    * index1 == 1 // first node                         
+    * index1 == (index2 - 1) // no nodes are in between x
+    */
+    swapNode(index1, index2) {
+        if (index1 > index2)
+            console.log(`index1 must be less than index2!`);
+        else if (index1 < 1 || index2 > this.size)
+            console.log(`index(s) out of bound!`);
+        else {
+            let currentX = this.head, currentY = this.head, cnt = 1;
+            let previousX = currentX, previousY = currentY;
+            let nextY = null;
+            while (cnt <= this.size) {
+                if (cnt < index1) {
+                    previousX = currentX;
+                    currentX = currentX.next;
+                }
+
+                if (cnt < index2) {
+                    previousY = currentY;
+                    currentY = currentY.next;
+                }
+                cnt++;
+            }
+
+            if (index2 != this.size) {
+                nextY = currentY.next;
+                nextY.previous = currentX;
+            }
+
+            if (index1 == 1) {
+                this.head = currentY;
+                currentY.previous = null;
+            }
+            else {
+                previousX.next = currentY;
+                currentY.previous = previousX;
+            }
+
+            if (index1 == index2 - 1) {
+                currentY.next = currentX;
+                currentX.previous = currentY;
+            }
+            else {
+                currentY.next = currentX.next;
+                previousY.next = currentX;
+                currentX.next.previous = currentY;
+                currentX.previous = previousY;
+            }
+            currentX.next = nextY;
+        }
+    }
+
+    // reverse list
+    reverselist() {
+        if (!this.head)
+            console.log("The list is empty!");
+        else {
+            let current = this.head, previous = null, nextCurr = current.next;
+            while (current.next) {
+                current.next = previous;
+                current.previous = nextCurr;
+                previous = current;
+                current = nextCurr;
+                nextCurr = nextCurr.next;
+            }
+            current.next = previous;
+            current.previous = null;
+            this.head = current;
+        }
+    }
+
     // print the list 
     printList() {
         let current = this.head;
-        process.stdout.write("Head <-> ");
+        process.stdout.write("Head -> ");
         while (current.next) {
             process.stdout.write(current.data + " <-> ");
             current = current.next;
         }
-        console.log(current.data + " <-> Null");
-        process.stdout.write("Null <-> ");
+        console.log(current.data + " -> Null");
+        process.stdout.write("Null <- ");
         while (current.previous) {
             process.stdout.write(current.data + " <-> ");
             current = current.previous;
         }
-        console.log(current.data + " <-> Head");
+        console.log(current.data + " <- Head");
 
         console.log("List Size: " + this.size);
     }
@@ -176,11 +251,16 @@ list.insertFirst(100);
 list.insertLast(600);
 list.insertAt(900, 2);
 
-list.deleteFirst();
-list.deleteAt(3);
-list.deleteLast();
+// list.deleteFirst();
+// list.deleteAt(3);
+// list.deleteLast();
 
-list.getNode(2);
+// list.getNode(2);
+
+list.printList();
+
+// list.swapNode(1, 2);
+list.reverselist();
 
 list.printList();
 // console.log(list);

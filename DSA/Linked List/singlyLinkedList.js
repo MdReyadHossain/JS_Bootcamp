@@ -151,7 +151,7 @@ class LinkedList {
     }
 
     // swap two nodes (index1 < index2)
-    changeNode(index1, index2) {
+    swapNode(index1, index2) {
         if (!this.head) {
             console.log(`list is empty`);
         }
@@ -234,8 +234,8 @@ list.insertAt(600, 1);
 // list.deleteAt(6);
 
 list.printList();
-// list.changeNode(1, 2);
-list.reverse();
+list.swapNode(1, 6);
+// list.reverse();
 
 // list.getSingleData(2);
 
